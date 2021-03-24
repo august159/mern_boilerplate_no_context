@@ -21,8 +21,9 @@ class App extends React.Component {
         <MainNavbar />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/countries" component={Countries} />
-          <Route exact path="/add-country" component={AddCountry} />
+          <Route exact path="/list" component={List} />
+          <Route exact path="/map" component={Map} />
+          <Route exact path="/new-street-art" component={NewStreetArt} />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/secret" component={Secret} />

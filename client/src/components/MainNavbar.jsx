@@ -10,18 +10,27 @@ function MainNavbar(props) {
   }
 
   return (
-    <nav className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <h1 className="App-title">MERN Boilerplate</h1>
-      <NavLink to="/" exact>
-        Home
+    <nav className="App-header navbar navbar-expand-lg">
+      {/* <img src={logo} className="App-logo" alt="logo" /> */}
+      <NavLink className="navbar-brand" to="/">
+        <h1 className="App-title">MERN Street art</h1>
       </NavLink>
-      <NavLink to="/countries">Countries</NavLink>
-      <NavLink to="/add-country">Add country</NavLink>
-      <NavLink to="/signup">Signup</NavLink>
-      <NavLink to="/login">Login</NavLink>
-
-      <Link to="/" onClick={handleLogoutClick}>
+      <NavLink className="nav-link" to="/list">
+        List
+      </NavLink>
+      <NavLink className="nav-link" to="/map">
+        Map
+      </NavLink>
+      <NavLink className="nav-link" to="/new-street-art">
+        New street art
+      </NavLink>
+      <NavLink className="nav-link" to="/signup">
+        Signup
+      </NavLink>
+      <NavLink className="nav-link" to="/login">
+        Login
+      </NavLink>
+      <Link className="nav-link" to="/" onClick={handleLogoutClick}>
         Logout
       </Link>
 

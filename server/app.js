@@ -23,6 +23,7 @@ app.use(
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(cors({ origin: "http://localhost:3000" }));
 
 // Enable authentication using session
 app.use(
@@ -34,8 +35,14 @@ app.use(
   })
 );
 
-app.use("/api", require("./routes/auth"));
-app.use("/api/countries", require("./routes/countries"));
+const authRouter = require("./routes/auth");
+app.use("/api", authRouter);
+
+const visitRouter = require("./routes/visits");
+app.use("/api", visitRouter);
+
+const streetArtRouter = require("./routes/street-arts");
+app.use("/api/street-arts", streetArtRouter);
 
 // For any routes that starts with "/api", catch 404 and forward to error handler
 app.use("/api/*", (req, res, next) => {
